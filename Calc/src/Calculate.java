@@ -1,3 +1,5 @@
+import factory.ViewerFactory;
+
 /**
  * @author macbookretina
  * 
@@ -11,7 +13,8 @@ public class Calculate {
 	}
 
 	public void viewLastResult(String viewCode) {
-		System.out.println(result);
+		ViewerFactory viewerFactory = new ViewerFactory();
+		viewerFactory.createView(viewCode);
 	}
 
 }
