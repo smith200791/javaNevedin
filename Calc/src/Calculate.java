@@ -1,3 +1,4 @@
+import intf.Viewer;
 import factory.ViewerFactory;
 
 /**
@@ -14,7 +15,9 @@ public class Calculate {
 
 	public void viewLastResult(String viewCode) {
 		ViewerFactory viewerFactory = new ViewerFactory();
-		viewerFactory.createView(viewCode);
+		Viewer viewer = viewerFactory.createView(viewCode);
+		viewer.onView(result);
+		System.out.println("success");	
 	}
 
 }

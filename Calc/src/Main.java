@@ -1,9 +1,12 @@
 
+
 public class Main {
-
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Calculate calculate = new Calculate();
+		calculate.ssumm(2, 2);
+		calculate.viewLastResult("2");
 	}
 
+	
 }
