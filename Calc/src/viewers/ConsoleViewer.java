@@ -5,7 +5,7 @@ import intf.Viewer;
 public class ConsoleViewer implements Viewer {
 
 	public void onView(Integer result) {
-		System.out.println("The last result is : "+ result);	
+		System.out.println("the result is :" + result);	
 	}
 
 }

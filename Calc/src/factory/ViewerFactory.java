@@ -1,20 +1,12 @@
 package factory;
 
 import intf.Viewer;
-import viewers.ConsoleViewer;
-import viewers.FileViewer;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+@SuppressWarnings("resource")
 public class ViewerFactory {
 	public Viewer createView(String code) {
-		
-		if (code.equals("1")) {
-			return new FileViewer();			
-		}
-		
-		if (code.equals("2")) {
-			return new ConsoleViewer();			
-		}
-		
-		return null;
+		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext(new String[] {"config.xml"});//показываем Spring где лежит файл конфигурации
+        return (Viewer)ac.getBean(code);
 	}
 }
