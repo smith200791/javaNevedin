@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class FileViewer implements Viewer {
 
-	public void onView(Integer result) {
+	public void onView(Double result) {
 		try {
 			File file = new File("/Users/macbookretina/Downloads/example.txt");
 			BufferedWriter output = new BufferedWriter(new FileWriter(file));

@@ -4,7 +4,7 @@ import intf.Viewer;
 
 public class ConsoleViewer implements Viewer {
 
-	public void onView(Integer result) {
+	public void onView(Double result) {
 		System.out.println("the result is :" + result);	
 	}
 
