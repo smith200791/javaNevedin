@@ -2,5 +2,5 @@ package intf;
 
 public interface Operation {
 	
-	public Double operate();
+	public Double operate(Double firstAgr, Double seconArg);
 }

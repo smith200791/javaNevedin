@@ -13,19 +13,20 @@ public class Main {
     private static SessionFactory sessionFactory;
     private static ServiceRegistry serviceRegistry;
 
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
 
         Calculate calculate = new Calculate();
         calculate.ssumm(2, 2);
         calculate.viewLastResult("superConsole");
 
-        calculate.executeOperation("multiply", 2, 3);
+        calculate.executeOperation("multiply",5.0,5.0);
         calculate.viewLastResult("superConsole");
-       
+
         sessionFactory = createSessionFactory();
         Session session = sessionFactory.openSession();
-        List<CalcOperations> calcOperations = (List<CalcOperations>) session.createQuery("from Book order by name").list();
-
+        List<CalcOperations> calcOperations = (List<CalcOperations>) session.createQuery("from TABLE_CALC_OPERATIONS").list();
+        System.out.println(calcOperations);
     }
 
     public static SessionFactory createSessionFactory() {
