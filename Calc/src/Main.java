@@ -24,7 +24,6 @@ public class Main {
        
         sessionFactory = createSessionFactory();
         Session session = sessionFactory.openSession();
-
         List<CalcOperations> calcOperations = (List<CalcOperations>) session.createQuery("from Book order by name").list();
 
     }
