@@ -6,7 +6,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import database.CalcOperations;
+import database.TableCalcOperations;
 
 public class Main {
 
@@ -25,8 +25,8 @@ public class Main {
 
         sessionFactory = createSessionFactory();
         Session session = sessionFactory.openSession();
-        List<CalcOperations> calcOperations = (List<CalcOperations>) session.createQuery("from TABLE_CALC_OPERATIONS").list();
-        System.out.println(calcOperations);
+        List<TableCalcOperations> tableCalcOperations = (List<TableCalcOperations>) session.createQuery("from TABLE_CALC_OPERATIONS").list();
+        System.out.println();
     }
 
     public static SessionFactory createSessionFactory() {

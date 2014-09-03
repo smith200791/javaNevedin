@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="TABLE_CALC_OPERATIONS")
-public class CalcOperations implements Serializable {
+public class TableCalcOperations implements Serializable {
     /**
      * 
      */
