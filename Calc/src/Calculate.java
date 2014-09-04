@@ -17,7 +17,6 @@ public class Calculate {
 
     public void executeOperation(String code,Double... args) {
         OperationFactory operationFactory = new OperationFactory();
-
         Operation operation = operationFactory.createOperation(code);
         result = operation.operate(args[0],args[1]);
 

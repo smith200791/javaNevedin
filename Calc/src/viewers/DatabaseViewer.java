@@ -5,6 +5,7 @@ import intf.Viewer;
 import java.util.Date;
 import java.util.List;
 
+import org.hibernate.HibernateError;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -13,9 +14,6 @@ import database.TableCalcOperations;
 
 public class DatabaseViewer implements Viewer {
 
-    protected static SessionFactory getSessionFactory() {
-        return sessionFactory;
-    }
 
     private static SessionFactory sessionFactory;
 
@@ -36,6 +34,7 @@ public class DatabaseViewer implements Viewer {
             selectResult(session);
 
         } catch (Exception e) {
+            throw new HibernateError("Error of exceute insert in database - result : " + result, e);
         } finally {
             HibernateUtils.shutdown();
         }
