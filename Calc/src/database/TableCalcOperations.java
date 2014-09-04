@@ -7,18 +7,18 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
 
 @Entity
-@Table(name="TABLE_CALC_OPERATIONS")
+@Table(name="TABLE_CALC_OPERATIONS" ,uniqueConstraints = {
+        @UniqueConstraint(columnNames = "OBJID")})
 public class TableCalcOperations implements Serializable {
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 1L;
-    
+
+    private static final long serialVersionUID = 8660861638523120444L;
     @Id
-    @Column(name="OBJID")
-    protected int objid;
+    @Column(name="OBJID",  unique = true, nullable = false)
+    protected long objid;
     
 
     @Column(name="RESULT",unique = false, nullable = false, length = 255)
@@ -26,24 +26,31 @@ public class TableCalcOperations implements Serializable {
 
     @Column(name="CREATE_DATE")
     protected Date createDate;
-    
-    
-    protected String getResult() {
-        return result;
-    }
-    protected void setResult(String result) {
-        this.result = result;
-    }
-    protected int getObjid() {
+
+    public long getObjid() {
         return objid;
     }
-    protected void setObjid(int objid) {
+
+    public void setObjid(long objid) {
         this.objid = objid;
     }
-    protected Date getCreateDate() {
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public Date getCreateDate() {
         return createDate;
     }
-    protected void setCreateDate(Date createDate) {
+
+    public void setCreateDate(Date createDate) {
         this.createDate = createDate;
-    }    
+    }
+    
+    
+    
 }

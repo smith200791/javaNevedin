@@ -7,7 +7,7 @@
   <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
   <property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521/pdb1</property>
   <property name="hibernate.connection.username">pmuser</property>
-  <property name="hibernate.connection.password">oracle</property>
+  <property name="hibernate.connection.password">qwerty</property>
   <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
   <property name="show_sql">true</property>
   
