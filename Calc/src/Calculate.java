@@ -11,9 +11,7 @@ public class Calculate {
 
     public Double result;
 
-    public void ssumm(Integer firstParam, Integer secondParam) {
-        result = (double) (firstParam + secondParam);
-    }
+
 
     public void executeOperation(String code,Double... args) {
         OperationFactory operationFactory = new OperationFactory();
@@ -26,6 +24,11 @@ public class Calculate {
         ViewerFactory viewerFactory = new ViewerFactory();
         Viewer viewer = viewerFactory.createView(viewCode);
         viewer.onView(result);
+    }
+
+    public void ssumm(double d, double e) {
+        result = d + e;
+        
     }
 
 }

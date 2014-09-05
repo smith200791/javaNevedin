@@ -14,15 +14,15 @@ import database.TableCalcOperations;
 
 public class DatabaseViewer implements Viewer {
 
-
     private static SessionFactory sessionFactory;
 
     @Override
     public void onView(Double result) {
         try {
-
+           
             sessionFactory = HibernateUtils.getSessionFactory();
             Session session = sessionFactory.openSession();
+
             session.beginTransaction();
 
             TableCalcOperations tableCalcOperations = new TableCalcOperations();
@@ -32,11 +32,8 @@ public class DatabaseViewer implements Viewer {
             session.getTransaction().commit();
             System.out.println("insert success");
             selectResult(session);
-
         } catch (Exception e) {
             throw new HibernateError("Error of exceute insert in database - result : " + result, e);
-        } finally {
-            HibernateUtils.shutdown();
         }
     }
 
