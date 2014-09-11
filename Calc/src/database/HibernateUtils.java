@@ -9,10 +9,9 @@ public class HibernateUtils {
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
     
-    // Andrey, session factory is SINGELTON !!!!
+    // Andrey, session factory is SINGLETON !!!!
     private static SessionFactory buildSessionFactory() {
         if (sessionFactory == null || (sessionFactory != null && sessionFactory.isClosed())) {
-
             try {
                 // Create the SessionFactory from hibernate.cfg.xml
                 Configuration configuration = new Configuration();
